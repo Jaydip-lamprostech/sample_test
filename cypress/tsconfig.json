@@ -1,0 +1,33 @@
+{
+  "exclude": [
+    "../node_modules/@types/jest",
+    "../node_modules/@testing-library/jest-dom"
+  ],
+  "include": [
+    "./index.ts",
+    "e2e/**/*",
+    "plugins/**/*",
+    "support/**/*",
+    // I removed this because it  was breaking - eli
+    // "../node_modules/cypress",
+    // "../node_modules/@testing-library/cypress",
+    "remix.env.d.ts"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true,
+    "types": ["node"],
+    // "types": ["node", "cypress", "@testing-library/cypress"],
+    "esModuleInterop": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "target": "es2019",
+    "strict": true,
+    "skipLibCheck": true,
+    "typeRoots": ["../types", "../node_modules/@types"],
+    "resolveJsonModule": true,
+    "paths": {
+      "~/*": ["../app/*"]
+    }
+  }
+}
